@@ -34,13 +34,10 @@
               <a href="#data-analytics">Phân tích dữ liệu</a>
             </li>
             <li>
-              <a href="#">Xác định đặc trưng</a>
+              <a href="#model-eval">Đánh giá mô hình</a>
             </li>
             <li>
-              <a href="#">Đánh giá mô hình</a>
-            </li>
-            <li>
-              <a href="#">Demo</a>
+              <a href="#demo">Demo</a>
             </li>
           </ul>
         </div>
@@ -92,7 +89,7 @@
           class="image-overlay"
         />
       </div>
-      <div id="data-analytics">
+      <div id="data-analytics" class="section">
         <h1>PHÂN TÍCH DỮ LIỆU</h1>
         <div class="img_block">
           <img
@@ -104,6 +101,146 @@
             Hình 1. Phân bổ số lượng mẫu fake (0) và real (1)
           </p>
         </div>
+      </div>
+      <div id="model-eval" class="section">
+        <h1>ĐÁNH GIÁ MÔ HÌNH</h1>
+        <div class="table-fir">
+          <h2>Phân chia theo tỷ lệ mẫu đối với các mô hình truyền thống</h2>
+          <table>
+            <thead>
+              <th>Tỷ lệ</th>
+              <th>Phương pháp</th>
+              <th>Accuracy</th>
+            </thead>
+            <tbody>
+              <tr class="checkpoint">
+                <td>80/20</td>
+                <td>CatBoostClassifier</td>
+                <td>0.846645</td>
+              </tr>
+              <tr>
+                <td>80/20</td>
+                <td>LogisticRegression</td>
+                <td>0.840611</td>
+              </tr>
+              <tr>
+                <td>80/20</td>
+                <td>RandomForestClassifier</td>
+                <td>0.844515</td>
+              </tr>
+              <tr>
+                <td>80/20</td>
+                <td>LGBMClassifier</td>
+                <td>0.839546</td>
+              </tr>
+              <tr>
+                <td>80/20</td>
+                <td>XGBClassifier</td>
+                <td>0.839901</td>
+              </tr>
+              <tr>
+                <td>80/20</td>
+                <td>SVC</td>
+                <td>0.833866</td>
+              </tr>
+              <tr>
+                <td>80/20</td>
+                <td>DecisionTreeClassifier</td>
+                <td>0.744054</td>
+              </tr>
+              <tr class="checkpoint">
+                <td>70/30</td>
+                <td>CatBoostClassifier</td>
+                <td>0.851927</td>
+              </tr>
+              <tr>
+                <td>70/30</td>
+                <td>LGBMClassifier</td>
+                <td>0.846247</td>
+              </tr>
+              <tr>
+                <td>70/30</td>
+                <td>RandomForestClassifier</td>
+                <td>0.846653</td>
+              </tr>
+              <tr>
+                <td>70/30</td>
+                <td>XGBClassifier</td>
+                <td>0.842596</td>
+              </tr>
+              <tr>
+                <td>70/30</td>
+                <td>LogisticRegression</td>
+                <td>0.840974</td>
+              </tr>
+              <tr>
+                <td>70/30</td>
+                <td>SVC</td>
+                <td>0.833866</td>
+              </tr>
+              <tr>
+                <td>70/30</td>
+                <td>DecisionTreeClassifier</td>
+                <td>0.744054</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-sec">
+          <h2>Phân chia theo tỷ lệ mẫu đối với các mô hình học sâu</h2>
+          <table>
+            <thead>
+              <th>Tỷ lệ</th>
+              <th>Phương pháp</th>
+              <th>Accuracy</th>
+            </thead>
+            <tbody>
+              <tr class="checkpoint">
+                <td>80/20</td>
+                <td>PhoBERT + TF-IDF + BiLSTM</td>
+                <td>0.9076023391812865</td>
+              </tr>
+              <tr>
+                <td>80/20</td>
+                <td>PhoBERT + BiLSTM</td>
+                <td>0.8721590909090909</td>
+              </tr>
+              <tr>
+                <td>80/20</td>
+                <td>PhoBERT + RNN</td>
+                <td>0.8340425531914893</td>
+              </tr>
+              <tr>
+                <td>80/20</td>
+                <td>GloVe + BiLSTM</td>
+                <td>0.8607954545454546</td>
+              </tr>
+              <tr>
+                <td>80/20</td>
+                <td>PhoBERT + CNN</td>
+                <td>0.851063829787234</td>
+              </tr>
+              <tr>
+                <td>80/20</td>
+                <td>PhoBERT + LSTM</td>
+                <td>0.8411347517730496</td>
+              </tr>
+              <tr>
+                <td>80/20</td>
+                <td>PhoBERT + MLP</td>
+                <td>0.8127659574468085</td>
+              </tr>
+              <tr>
+                <td>80/20</td>
+                <td>GCN</td>
+                <td>0.7312</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="demo" class="section">
+        <h1>dự đoán tin giả</h1>
       </div>
     </main>
 

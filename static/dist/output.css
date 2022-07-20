@@ -74,13 +74,14 @@ body {
   font-size: 1.2rem;
   text-decoration: none;
   color: var(--text-color);
-  font-weight: 200;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .active {
   width: auto;
   border-radius: 2px;
-  border-bottom: 4px solid #eeed5e;
+  border-bottom: 4px solid var(--base-color);
   transition: width 0.5s ease-in-out;
 }
 
@@ -89,7 +90,7 @@ body {
   content: "";
   width: 0;
   border-radius: 2px;
-  border-color: #eeed5e;
+  border-color: var(--base-color);
   border-width: 2px;
   border-style: solid;
   transition: width 0.5s ease-in-out;
@@ -201,15 +202,16 @@ h2 {
 }
 
 #data-analytics {
-  padding-top: 100px;
   width: 100%;
   height: 100vh;
 }
 
-#data-analytics h1 {
+.section h1 {
+  padding-top: 100px;
   text-align: center;
   color: #068a20;
   font-weight: 800;
+  text-transform: uppercase;
 }
 
 .img_block {
@@ -219,14 +221,45 @@ h2 {
 }
 
 .fake_real__diagram {
-  width: 50%;
+  width: 100%;
   height: 50%;
   object-fit: contain;
 }
 
 .title_image {
-  width: 50%;
+  width: 100%;
   font-size: 1.2rem;
   text-align: center;
   color: #000;
+}
+
+#model-eval h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+#model-eval .table-fir,
+.table-sec {
+  margin-top: 50px;
+}
+
+.table-fir table,
+.table-sec table {
+  margin: auto;
+  border-collapse: collapse;
+  width: 75%;
+}
+
+table,
+th,
+td {
+  text-align: left;
+  border: 1px solid #ddd;
+  padding: 10px 80px 10px 10px;
+}
+
+.checkpoint {
+  color: #1866b3;
+  font-weight: bold;
 }

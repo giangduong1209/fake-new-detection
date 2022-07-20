@@ -9,7 +9,7 @@ window.addEventListener("scroll", function () {
     headerBlock.style.backgroundColor = "rgba(255, 255, 255, 1)";
     headerUniversity.style.color = "#ec1c24";
     headerItems.forEach((item) => {
-      item.style.color = "#ec1c24";
+      item.style.color = "#1866b3";
     });
   } else {
     headerBlock.style.backgroundColor = "rgba(255, 255, 255, 0.15)";
