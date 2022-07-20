@@ -263,3 +263,22 @@ td {
   color: #1866b3;
   font-weight: bold;
 }
+
+form {
+  text-align: center;
+}
+
+.input-block {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.input-block h2 {
+  color: #000;
+}
+
+.input-block input {
+  font-size: 1.2rem;
+  width: 50%;
+}
