@@ -91,15 +91,27 @@
       </div>
       <div id="data-analytics" class="section">
         <h1>PHÂN TÍCH DỮ LIỆU</h1>
-        <div class="img_block">
-          <img
-            src="{{ url_for('static', filename='images/output.png') }}"
-            alt="fake and real news diagram"
-            class="fake_real__diagram"
-          />
-          <p class="title_image">
-            Hình 1. Phân bổ số lượng mẫu fake (0) và real (1)
-          </p>
+        <div class="img-block">
+          <div class="img_block-one">
+            <img
+              src="{{ url_for('static', filename='images/output.png') }}"
+              alt="fake and real news diagram"
+              class="fake_real__diagram"
+            />  
+            <p class="title_image">
+              Hình 1. Phân bổ số lượng mẫu fake (0) và real (1)
+            </p>
+          </div>
+          <div class="img_block-two">
+            <img
+              src="{{ url_for('static', filename='images/rare_one.png') }}"
+              alt="fake and real news diagram"
+              class="fake_real__diagram"
+            />  
+            <p class="title_image">
+              Hình 2. Tỷ lệ train huấn luyện dữ liệu
+            </p>
+          </div>
         </div>
       </div>
       <div id="model-eval" class="section">
@@ -235,22 +247,64 @@
                 <td>GCN</td>
                 <td>0.7312</td>
               </tr>
+              <tr class="checkpoint">
+                <td>70/30</td>
+                <td>PhoBERT + TF-IDF + BiLSTM</td>
+                <td>0.8790127328312467</td>
+              </tr>
+              <tr>
+                <td>70/30</td>
+                <td>PhoBERT + BiLSTM</td>
+                <td>0.8778723627147232</td>
+              </tr>
+              <tr>
+                <td>70/30</td>
+                <td>PhoBERT + RNN</td>
+                <td>0.8317346734377364</td>
+              </tr>
+              <tr>
+                <td>70/30</td>
+                <td>GloVe + BiLSTM</td>
+                <td>0.8617397838473773</td>
+              </tr>
+              <tr>
+                <td>70/30</td>
+                <td>PhoBERT + CNN</td>
+                <td>0.8508754587346738</td>
+              </tr>
+              <tr>
+                <td>70/30</td>
+                <td>PhoBERT + LSTM</td>
+                <td>0.8403483264767537</td>
+              </tr>
+              <tr>
+                <td>70/30</td>
+                <td>PhoBERT + MLP</td>
+                <td>0.8118364765783473</td>
+              </tr>
+              <tr>
+                <td>70/30</td>
+                <td>GCN</td>
+                <td>0.7312</td>
+              </tr>
             </tbody>
           </table>
         </div>
       </div>
       <div id="demo" class="section">
         <h1>thực nghiệm</h1>
-        <form action="post">
-          <div class="input-block">
-            <h2>Tiêu đề</h2>
+        <form action="http://127.0.0.1:5000/handle" method="post">
+          <div class="form-field">
             <input
-              name="text-input"
-              id="text-input"
-              placeholder="Message"
+            type="text"
+            name="text-input"
+            id="text-input"
+            class="form-input"
+            placeholder=" "
             ></input>
+            <label for="text-input" class="form-label">Post Message</label>
           </div>
-          <button tyle="submit">Dự đoán</button>
+          <button tyle="submit" class="btn-submit">Dự đoán</button>
         </form>
       </div>
     </main>
