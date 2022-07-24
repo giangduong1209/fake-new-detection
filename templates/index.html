@@ -37,7 +37,7 @@
               <a href="#model-eval">Đánh giá mô hình</a>
             </li>
             <li>
-              <a href="#demo">Demo</a>
+              <a href="http://127.0.0.1:5000/handle">Demo</a>
             </li>
           </ul>
         </div>
@@ -70,6 +70,10 @@
                 <p>NGUYỄN TRẦN QUỲNH NHƯ - 51800797</p>
               </div>
             </div>
+            <div class="info-major">
+              <h2>Mạng máy tính và truyền thông dữ liệu</h2>
+              <h2>Kỹ thuật phần mềm</h2>
+            </div>
             <div class="info-teacher">
               <div class="info-title">
                 <p>Người hướng dẫn:</p>
@@ -97,7 +101,7 @@
               src="{{ url_for('static', filename='images/output.png') }}"
               alt="fake and real news diagram"
               class="fake_real__diagram"
-            />  
+            />
             <p class="title_image">
               Hình 1. Phân bổ số lượng mẫu fake (0) và real (1)
             </p>
@@ -107,10 +111,8 @@
               src="{{ url_for('static', filename='images/rare_one.png') }}"
               alt="fake and real news diagram"
               class="fake_real__diagram"
-            />  
-            <p class="title_image">
-              Hình 2. Tỷ lệ train huấn luyện dữ liệu
-            </p>
+            />
+            <p class="title_image">Hình 2. Tỷ lệ train huấn luyện dữ liệu</p>
           </div>
         </div>
       </div>
@@ -291,9 +293,9 @@
           </table>
         </div>
       </div>
-      <div id="demo" class="section">
+      <!-- <div id="demo" class="section">
         <h1>thực nghiệm</h1>
-        <form action="http://127.0.0.1:5000/handle" method="post">
+        <form action="http://127.0.0.1:5000/handler" method="POST" id="todo-form">
           <div class="form-field">
             <input
             type="text"
@@ -306,8 +308,17 @@
           </div>
           <button tyle="submit" class="btn-submit">Dự đoán</button>
         </form>
-      </div>
+
+        <div class="equal-block">
+          <h2>Kết quả:</h2>
+          <span>{{ result }}</span>
+        </div>
+      </div> -->
     </main>
+
+    <footer>
+      <p>Copyright &copy; by Giang Duong. All Rights Reserved.</p>
+    </footer>
 
     <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
   </body>

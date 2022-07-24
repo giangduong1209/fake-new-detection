@@ -25,235 +25,28 @@
             alt="TON DUC THANG LOGO"
           />
           <h1>
-            <a href="#" class="link-main">Đại học Tôn Đức Thắng</a>
+            <a href="#" class="link-main" style="color: #ec1c24;">Đại học Tôn Đức Thắng</a>
           </h1>
         </div>
         <div class="header_block__right">
           <ul>
             <li>
-              <a href="#data-analytics">Phân tích dữ liệu</a>
+              <a href="/" style="color: #1866b3;">Phân tích dữ liệu</a>
             </li>
             <li>
-              <a href="#model-eval">Đánh giá mô hình</a>
+              <a href="/" style="color: #1866b3;">Đánh giá mô hình</a>
             </li>
             <li>
-              <a href="#demo">Demo</a>
+              <a href="#demo" style="color: #1866b3;">Demo</a>
             </li>
           </ul>
         </div>
       </div>
     </header>
     <main>
-      <div class="main-content">
-        <div class="overlay">
-          <div class="header-title">
-            <h1>TỔNG LIÊN ĐOÀN LAO ĐỘNG VIỆT NAM</h1>
-            <h1>TRƯỜNG ĐẠI HỌC TÔN ĐỨC THẮNG</h1>
-            <h1>KHOA CÔNG NGHỆ THÔNG TIN</h1>
-            <img
-              src="https://stdportal.tdtu.edu.vn/images/LogoTDTBgWhite.png"
-              alt="TON DUC THANG LOGO"
-            />
-          </div>
-          <div class="main-title">
-            <h2>DỰ ÁN CÔNG NGHỆ THÔNG TIN 2</h2>
-            <h1>PHÁT HIỆN TIN GIẢ BẰNG HỌC MÁY</h1>
-          </div>
-
-          <div class="info-person">
-            <div class="info-student">
-              <div class="info-title">
-                <p>Sinh viên thực hiện:</p>
-              </div>
-              <div class="info-content">
-                <p>DƯƠNG TRƯỜNG GIANG - 51800973</p>
-                <p>NGUYỄN TRẦN QUỲNH NHƯ - 51800797</p>
-              </div>
-            </div>
-            <div class="info-teacher">
-              <div class="info-title">
-                <p>Người hướng dẫn:</p>
-              </div>
-              <div class="info-content">
-                <p>TS. BÙI THANH HÙNG</p>
-              </div>
-            </div>
-          </div>
-          <div class="footer-title">
-            <h1>THÀNH PHỐ HỒ CHÍ MINH, NĂM 2022</h1>
-          </div>
-        </div>
-        <img
-          src="https://www.tdtu.edu.vn/sites/www/files/gallery/2022/Khuon-vien/toan-canh.jpg"
-          alt="TON DUC THANG UNIVERSITY"
-          class="image-overlay"
-        />
-      </div>
-      <div id="data-analytics" class="section">
-        <h1>PHÂN TÍCH DỮ LIỆU</h1>
-        <div class="img-block">
-          <div class="img_block-one">
-            <img
-              src="{{ url_for('static', filename='images/output.png') }}"
-              alt="fake and real news diagram"
-              class="fake_real__diagram"
-            />  
-            <p class="title_image">
-              Hình 1. Phân bổ số lượng mẫu fake (0) và real (1)
-            </p>
-          </div>
-          <div class="img_block-two">
-            <img
-              src="{{ url_for('static', filename='images/rare_one.png') }}"
-              alt="fake and real news diagram"
-              class="fake_real__diagram"
-            />  
-            <p class="title_image">
-              Hình 2. Tỷ lệ train huấn luyện dữ liệu
-            </p>
-          </div>
-        </div>
-      </div>
-      <div id="model-eval" class="section">
-        <h1>ĐÁNH GIÁ MÔ HÌNH</h1>
-        <div class="table-fir">
-          <h2>Phân chia theo tỷ lệ mẫu đối với các mô hình truyền thống</h2>
-          <table>
-            <thead>
-              <th>Tỷ lệ</th>
-              <th>Phương pháp</th>
-              <th>Accuracy</th>
-            </thead>
-            <tbody>
-              <tr class="checkpoint">
-                <td>80/20</td>
-                <td>CatBoostClassifier</td>
-                <td>0.846645</td>
-              </tr>
-              <tr>
-                <td>80/20</td>
-                <td>LogisticRegression</td>
-                <td>0.840611</td>
-              </tr>
-              <tr>
-                <td>80/20</td>
-                <td>RandomForestClassifier</td>
-                <td>0.844515</td>
-              </tr>
-              <tr>
-                <td>80/20</td>
-                <td>LGBMClassifier</td>
-                <td>0.839546</td>
-              </tr>
-              <tr>
-                <td>80/20</td>
-                <td>XGBClassifier</td>
-                <td>0.839901</td>
-              </tr>
-              <tr>
-                <td>80/20</td>
-                <td>SVC</td>
-                <td>0.833866</td>
-              </tr>
-              <tr>
-                <td>80/20</td>
-                <td>DecisionTreeClassifier</td>
-                <td>0.744054</td>
-              </tr>
-              <tr class="checkpoint">
-                <td>70/30</td>
-                <td>CatBoostClassifier</td>
-                <td>0.851927</td>
-              </tr>
-              <tr>
-                <td>70/30</td>
-                <td>LGBMClassifier</td>
-                <td>0.846247</td>
-              </tr>
-              <tr>
-                <td>70/30</td>
-                <td>RandomForestClassifier</td>
-                <td>0.846653</td>
-              </tr>
-              <tr>
-                <td>70/30</td>
-                <td>XGBClassifier</td>
-                <td>0.842596</td>
-              </tr>
-              <tr>
-                <td>70/30</td>
-                <td>LogisticRegression</td>
-                <td>0.840974</td>
-              </tr>
-              <tr>
-                <td>70/30</td>
-                <td>SVC</td>
-                <td>0.833866</td>
-              </tr>
-              <tr>
-                <td>70/30</td>
-                <td>DecisionTreeClassifier</td>
-                <td>0.744054</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="table-sec">
-          <h2>Phân chia theo tỷ lệ mẫu đối với các mô hình học sâu</h2>
-          <table>
-            <thead>
-              <th>Tỷ lệ</th>
-              <th>Phương pháp</th>
-              <th>Accuracy</th>
-            </thead>
-            <tbody>
-              <tr class="checkpoint">
-                <td>80/20</td>
-                <td>PhoBERT + TF-IDF + BiLSTM</td>
-                <td>0.9076023391812865</td>
-              </tr>
-              <tr>
-                <td>80/20</td>
-                <td>PhoBERT + BiLSTM</td>
-                <td>0.8721590909090909</td>
-              </tr>
-              <tr>
-                <td>80/20</td>
-                <td>PhoBERT + RNN</td>
-                <td>0.8340425531914893</td>
-              </tr>
-              <tr>
-                <td>80/20</td>
-                <td>GloVe + BiLSTM</td>
-                <td>0.8607954545454546</td>
-              </tr>
-              <tr>
-                <td>80/20</td>
-                <td>PhoBERT + CNN</td>
-                <td>0.851063829787234</td>
-              </tr>
-              <tr>
-                <td>80/20</td>
-                <td>PhoBERT + LSTM</td>
-                <td>0.8411347517730496</td>
-              </tr>
-              <tr>
-                <td>80/20</td>
-                <td>PhoBERT + MLP</td>
-                <td>0.8127659574468085</td>
-              </tr>
-              <tr>
-                <td>80/20</td>
-                <td>GCN</td>
-                <td>0.7312</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div id="demo" class="section">
+      <div id="demo" class="section" style="margin-top: 100px;">
         <h1>thực nghiệm</h1>
-        <form action="http://127.0.0.1:5000/handler" method="post">
+        <form action="http://127.0.0.1:5000/handler" method="POST" id="todo-form">
           <div class="form-field">
             <input
             type="text"
@@ -264,13 +57,21 @@
             ></input>
             <label for="text-input" class="form-label">Post Message</label>
           </div>
-          <div class="btn-block">
-            <button tyle="submit" class="btn-submit">Dự đoán</button>
-          </div>
+          <button tyle="submit" class="btn-submit">Dự đoán</button>
         </form>
+
+        <div class="equal-block">
+          <h2>Kết quả:</h2>
+          <span>{{ result }}</span>
+        </div>
       </div>
     </main>
 
+    <footer style="position: relative; bottom: 0;">
+      <p>Copyright &copy; by Giang Duong. All Rights Reserved.</p>
+    </footer>
+
     <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+    
   </body>
 </html>
