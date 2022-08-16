@@ -9,10 +9,11 @@ from tqdm import tqdm
 from nltk.tokenize import word_tokenize
 import nltk
 from tensorflow.keras.models import load_model
-nltk.download('punkt')
 
 
 app = Flask(__name__)
+
+
 
 cols = ['user_name', 'post_message', 'timestamp_post', 'num_like_post', 'num_comment_post', 'num_share_post', 'label']
 df = pd.read_csv("./public_train.csv", usecols = cols ,encoding = "utf-8")
@@ -26,6 +27,7 @@ def create_corpus(df):
         corpus.append(words)
     return corpus
 
+
 df['post_message']=df['post_message'].apply(str)
 corpus = create_corpus(df)
 
@@ -35,27 +37,23 @@ sequences = tokenizer.texts_to_matrix(corpus, mode='tfidf')
 tweet_pad = pad_sequences(sequences, maxlen=200, truncating='post', padding='post')
 
 
-
-def predictor(text_input):
-    model = load_model("model.h5")
-    prediction = model.predict(text_input)
-    return prediction[6]
-
-@app.route("/")
+@app.route("/", methods=["GET"])
 def index():
     return render_template("index.html") 
 
-@app.route("/handle")
+@app.route("/handle", methods=["GET"])
 def demo_template():
     return render_template("handler.html")
 
-@app.route("/handler", methods=["GET", "POST"])
+@app.route("/handle", methods=["POST"])
 def handler():
     text = request.form["text-input"]
+    model = load_model("model.h5")
     sequences = tokenizer.texts_to_matrix(text, mode="tfidf")
     tweet_pad = pad_sequences(sequences, maxlen=200, truncating='post', padding='post')
-    result = predictor(tweet_pad) 
-    if result >= 0.06:
+    prediction = model.predict(tweet_pad)[6]
+    
+    if prediction >= 0.06:
         prediction = "Tin thật"
     else:
         prediction = "Tin giả"
